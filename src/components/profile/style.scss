@@ -1,0 +1,25 @@
+.container-fluid {
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+label {
+  margin-left: 10px;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+h1 {
+  font-weight: bold;
+}

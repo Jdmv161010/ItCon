@@ -1,0 +1,15 @@
+button {
+  width: 100px;
+}
+.form-group.profile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.login-form {
+  width: 500px;
+  padding: 30px;
+  border-radius: 10px;
+  background-color: lighten($color: blue, $amount: 30);
+}
