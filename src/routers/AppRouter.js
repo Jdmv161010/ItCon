@@ -11,12 +11,12 @@ export const AppRouter = () => {
   const state = useSelector((state) => state);
 
   useEffect(() => {
-    if (state.auth.id === "" || state.auth.id === undefined) {
+    if (state.auth.logged === false || state.auth.logged === undefined) {
       setIsLoggedIn(false);
     } else {
       setIsLoggedIn(true);
     }
-  }, [state.auth.id, setIsLoggedIn]);
+  }, [state.auth.logged, setIsLoggedIn]);
 
   return (
     <Router>
@@ -26,13 +26,13 @@ export const AppRouter = () => {
             exact
             path="/auth"
             component={AuthScreen}
-            isLoggedIn={isLoggedIn}
+            isLoggedIn={isLoggedIn} //{user.isLoggedIn}
           />
           <PrivateRoute
             exact
             path="/"
             component={ProfileScreen}
-            isLoggedIn={isLoggedIn}
+            isLoggedIn={isLoggedIn} //{user.isLoggedIn}
           />
           <Redirect to="/auth" />
         </Switch>

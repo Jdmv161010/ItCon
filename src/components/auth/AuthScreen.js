@@ -3,10 +3,11 @@ import "./style.scss";
 import "../styles.scss";
 import { useForm } from "../../hooks/useForm";
 import { useDispatch } from "react-redux";
-import { startAuth,  } from "../../actions/auth";
+import { startAuth } from "../../actions/auth";
 
 export const AuthScreen = () => {
   const dispatch = useDispatch();
+
   const [values, handelInputChange] = useForm({
     id: "",
     name: "",
@@ -105,10 +106,11 @@ export const AuthScreen = () => {
               onChange={handelInputChange}
             />
           </div>
-
-          <button type="submit" className="btn btn-primary">
-            Ingresar
-          </button>
+          <div className="form-group buttons">
+            <button type="submit" className="btn btn-primary">
+              Registrar
+            </button>
+          </div>
         </form>
       </div>
     </div>

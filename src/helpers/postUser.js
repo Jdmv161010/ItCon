@@ -1,12 +1,5 @@
-export const postUser = async (
-  id,
-  name,
-  lastName,
-  email,
-  phone,
-  city,
-  country
-) => {
+export const postUser = ( id, name, lastName, email, phone, city, country ) => {
+  
   const data = {
     id: id,
     name: name,
@@ -18,7 +11,7 @@ export const postUser = async (
   };
 
   const url = "https://6077bc761ed0ae0017d6b3ac.mockapi.io/users";
-  const resp = await fetch(url, {
+  const resp = fetch(url, {
     method: "POST",
     headers: {
       Accept: "application/json",
@@ -28,7 +21,8 @@ export const postUser = async (
   })
     .then((resp) => resp.json())
     .then((data) => {
-      //console.log(data);
+      console.log('POST',data);
+      return data;
     });
   return resp;
 };

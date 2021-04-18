@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { logout } from "../../actions/auth";
+import { logout, startLogin } from "../../actions/auth";
 import "./style.scss";
 
 export const ProfileScreen = () => {
@@ -9,6 +9,10 @@ export const ProfileScreen = () => {
   const { id, name, lastName, email, phone, city, country } = useSelector(
     (state) => state.auth
   );
+
+  useEffect(() => {
+    setTimeout(dispatch(startLogin(id)), 5000);
+  }, [dispatch, id]);
 
   const handleLogOut = () => {
     dispatch(logout());

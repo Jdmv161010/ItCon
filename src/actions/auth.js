@@ -1,4 +1,3 @@
-// //import { useFetchUser } from "../hooks/useFetchUser";
 import { getUser } from "../helpers/getUser";
 import { postUser } from "../helpers/postUser";
 import { types } from "../types/types";
@@ -6,15 +5,17 @@ import { types } from "../types/types";
 export const startAuth = (id, name, lastName, email, phone, city, country) => {
   return (dispatch) => {
     postUser();
-    dispatch(login(id, name, lastName, email, phone, city, country));
+    dispatch(login(id, name, lastName, email, phone, city, country, true));
   };
 };
 
-export const displayUser = (id) => {
-  getUser();
-}
+export const startLogin =  (id) => {
+  return async (dispatch) => {
+    await getUser(id).then(resp => console.log("Usuario:", resp));
+  }
+};
 
-export const login = (id, name, lastName, email, phone, city, country) => ({
+export const login = (id, name, lastName, email, phone, city, country, logged) => ({
   type: types.login,
   payload: {
     id,
@@ -24,9 +25,11 @@ export const login = (id, name, lastName, email, phone, city, country) => ({
     phone,
     city,
     country,
+    logged,
   },
 });
 
 export const logout = () => ({
   type: types.logout,
+  payload: { logged: false },
 });

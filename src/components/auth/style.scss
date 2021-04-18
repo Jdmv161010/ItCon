@@ -7,3 +7,10 @@
   align-items: center;
   background-color: blue;
 }
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  
+}
