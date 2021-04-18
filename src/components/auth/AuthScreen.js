@@ -1,5 +1,4 @@
 import React from "react";
-import "./style.scss";
 import "../styles.scss";
 import { useForm } from "../../hooks/useForm";
 import { useDispatch } from "react-redux";

@@ -11,7 +11,7 @@ export const startAuth = (id, name, lastName, email, phone, city, country) => {
 
 export const startLogin =  (id) => {
   return async (dispatch) => {
-    await getUser(id).then(resp => console.log("Usuario:", resp));
+    await getUser(id).then(resp => console.log(resp));
   }
 };
 

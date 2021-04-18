@@ -1,15 +1,64 @@
+.container-fluid {
+  padding: 20px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+}
+
 button {
   width: 100px;
 }
-.form-group.profile {
+
+.form-group {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
+}
+
+.form-group.profile {
+  justify-content: initial;
+}
+
+.form-group.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .login-form {
-  width: 500px;
+  width: 450px;
+  height: auto;
   padding: 30px;
   border-radius: 10px;
   background-color: lighten($color: blue, $amount: 30);
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+input.form-control {
+  width: 60%;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+label {
+  margin-left: 10px;
+  margin-right: 8px;
+  font-weight: bold;
+}
+
+h1 {
+  font-weight: bold;
 }
